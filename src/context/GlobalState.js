@@ -3,7 +3,7 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    cars: [],
+    cars: [{ id: 0, text: "TestCar-DELETE"}],
     trips: []
 }
 

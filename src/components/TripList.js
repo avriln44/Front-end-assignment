@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Trip } from './Trips';
+import { GlobalContext } from '../context/GlobalState';
 
-import '../App.css';
+export const TripList = () => {
+    const { trips } = useContext(GlobalContext);
 
-export function TripList() {
     return (
-        <div>
-            <header>TripList</header>
-        </div>
+        <>
+            <h3>Trips</h3>
+            {trips.length > 0 ? (
+                <ul>
+                    {trips.map(trip => (<Trip key={trip.id} trip={trip} />))}
+                </ul>
+            ) : (
+                <h5>There are no trips.</h5>
+            )}
+        </>
     )
 }
 
-export default TripList;
