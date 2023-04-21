@@ -6,7 +6,8 @@ export const Trip = ({ trip }) => {
     const { deleteTrip } = useContext(GlobalContext);
 
     return (
-        <li>
+        <li className={trip.isElectronic ? 'trip electronic' : 'trip'}>
+            {trip.isElectronic ? '(Electronic)' : ''}
             <table>
                 <tbody>
                     <tr>
@@ -15,7 +16,7 @@ export const Trip = ({ trip }) => {
                     </tr>
                     <tr>
                         <td>Refuelling liters:</td>
-                        <td>{trip.refuellingLiters} liters</td>
+                        <td>{trip.refuellingLiters}</td>
                     </tr>
                     <tr>
                         <td>Refuelling cost:</td>
@@ -30,6 +31,4 @@ export const Trip = ({ trip }) => {
             <button onClick={() => deleteTrip(trip.id)} className="delete-btn">x</button>
         </li>
     )
-
-
 }

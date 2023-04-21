@@ -5,9 +5,8 @@ import { AddNewCar } from './components/AddNewCar';
 import { AddNewTrip } from './components/AddNewTrip';
 import { TripList } from './components/TripList';
 
-import { GlobalProvider } from './context/GlobalState';
-
 import './App.css';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
