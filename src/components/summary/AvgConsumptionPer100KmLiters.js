@@ -18,11 +18,19 @@ export const AvgConsumptionPer100KmLiters = () => {
         <>
             <br />
             <>Average consumption per 100 km in liters</>
-            <h1 id="avgConsumptionPer100KmLiters">{avgConsumptionPer100KmLiters.toFixed(2)} Km/l</h1>
+            <h1 id="avgConsumptionPer100KmLiters">
+                {isNaN(avgConsumptionPer100KmLiters)
+                    ? "Not available"
+                    : `${avgConsumptionPer100KmLiters.toFixed(2)} Km/l`}
+            </h1>
 
             <br />
             <>Average consumption per 100 km in kWh</>
-            <h1 id="avgConsumptionPer100KmkWh">{avgConsumptionPer100KmkWh.toFixed(2)} kWh</h1>
+            <h1 id="avgConsumptionPer100KmkWh">
+                {isNaN(avgConsumptionPer100KmkWh)
+                    ? "Not available"
+                    : `${avgConsumptionPer100KmkWh.toFixed(2)} kWh`}
+            </h1>
         </>
     );
 }

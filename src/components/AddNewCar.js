@@ -27,12 +27,13 @@ export const AddNewCar = () => {
         }
         else {
             addCar(newCar);
+            setText('')
         }
     }
 
     return (
         <>
-            <h3>Add a New Car</h3>
+            <h2>Add a New Car</h2>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">Car Name</label>
