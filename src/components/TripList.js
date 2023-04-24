@@ -24,7 +24,13 @@ export const TripList = () => {
     return (
         <>
             <h3>Trips for all cars: {trips.length}</h3>
-            {trips.length <= 0 && (
+            {trips.length > 0 ? (
+                <ul className="list">
+                    {(showAll ? trips : trips.slice(0, 3)).map(trip => (
+                        <Trip key={trip.id} trip={trip} />
+                    ))}
+                </ul>
+            ) : (
                 <h5>There are no trips.</h5>
             )}
             {trips.length > 3 && (
